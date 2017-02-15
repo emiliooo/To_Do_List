@@ -1,0 +1,96 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title></title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-4"> </div>
+
+            <div class="col-md-4 buton input">
+            <div class='error'>WPISZ ZADANIE</div>
+            <input type="text" id="input_id" class="form-control one" placeholder="WPISZ ZADANIE">
+                <div  id="plus" > </div>
+            </div>
+            <div class="col-md-4 input"></div>
+
+
+        </div>
+
+            <div class="row">
+                    <div class="col-md-3"> </div>
+                
+                    <div class="col-md-3"> 
+                         <div class="col-md-12">
+                          <ul id="myList"> </ul>
+                      </div>
+
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-3"> </div>
+                
+            </div>
+            <ol></ol>
+            </div>
+
+
+
+<script>
+var newEl = document.getElementById('plus');
+
+newEl.addEventListener('click', writeToFile, false);
+
+
+
+
+
+
+
+  
+    var dane = document.getElementById("input_id").value;
+
+    $(document).ready(function(){
+        $("#plus").click(function(){
+     
+
+            var bla = $('#input_id').val();
+
+                 if(bla.length<1){
+                     document.querySelector('.error').style.display = "block";
+                 }
+                else {
+
+                  $("ul").append("<li> "+bla+" <div class='remove'>  </div></li>"); 
+                  document.getElementById("input_id").value = "";
+                  document.querySelector('.error').style.display = "none";
+                    }
+
+
+
+        });
+        $(document).on("click", ".remove" , function() {
+            $(this).parent().slideUp();
+        });
+    });
+
+
+
+
+
+ 
+
+
+</script>
+</div>
+
+ <script type="text/javascript" src="APP.js"></script>
+
+</body>
+</html>
